@@ -1,11 +1,12 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Inter, Instrument_Serif } from 'next/font/google'
+import { Instrument_Serif, Plus_Jakarta_Sans } from 'next/font/google'
 import { profile } from '@/data/profile'
 import './globals.css'
 
-const sans = Inter({
+const sans = Plus_Jakarta_Sans({
   subsets: ['latin'],
+  weight: ['400', '500', '600', '800'],
   variable: '--font-sans',
   display: 'swap',
 })

@@ -1,15 +1,18 @@
 import { ArrowUpRight } from 'lucide-react'
 import {
   getContactChannels,
-  getPrimaryMailto,
+  getPrimaryCtaHref,
   profile,
 } from '@/data/profile'
 import { SectionLabel } from '@/components/sections/SectionLabel'
 
 export function Contact() {
   const channels = getContactChannels()
-  const primaryMailto = getPrimaryMailto()
+  const primaryCtaHref = getPrimaryCtaHref()
   const hasConfiguredContact = channels.some((channel) => channel.configured)
+  const isExternalCta = Boolean(
+    primaryCtaHref && !primaryCtaHref.startsWith('mailto:'),
+  )
 
   return (
     <section className="contact" id="contato" aria-labelledby="contact-heading">
@@ -27,8 +30,13 @@ export function Contact() {
         </h2>
         <p className="contact-copy">{profile.contact.copy}</p>
 
-        {primaryMailto ? (
-          <a className="button-light" href={primaryMailto}>
+        {primaryCtaHref ? (
+          <a
+            className="button-light"
+            href={primaryCtaHref}
+            target={isExternalCta ? '_blank' : undefined}
+            rel={isExternalCta ? 'noopener noreferrer' : undefined}
+          >
             {profile.contact.ctaLabel}{' '}
             <ArrowUpRight size={17} aria-hidden="true" />
           </a>

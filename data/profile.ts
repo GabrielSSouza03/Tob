@@ -1,9 +1,6 @@
 import type { ContactChannel, Profile } from '@/types/profile'
 
-/**
- * Contatos: preencher email / whatsapp / linkedin com valores confirmados
- * antes da publicação. null = placeholder explícito na UI.
- */
+
 export const profile: Profile = {
   name: 'Tobias de Lima',
   shortName: 'Tobias',
@@ -126,8 +123,9 @@ export const profile: Profile = {
     copy: 'Entre em contato para conversar sobre consultoria, avaliação e possibilidades de colaboração profissional.',
     ctaLabel: 'Solicitar consultoria ou avaliação',
     email: null,
-    whatsapp: null,
-    linkedin: null,
+    whatsapp: '55 11 97827-3354',
+    linkedin: 'https://www.linkedin.com/in/tobiasdelima/',
+    tiktok: 'https://www.tiktok.com/@tobiasfisiologista',
   },
   seo: {
     title: 'Tobias de Lima | Fisiologia Esportiva e Performance',
@@ -152,7 +150,7 @@ export const profile: Profile = {
 }
 
 export function getContactChannels(): ContactChannel[] {
-  const { email, whatsapp, linkedin } = profile.contact
+  const { email, whatsapp, linkedin, tiktok } = profile.contact
 
   return [
     {
@@ -178,6 +176,13 @@ export function getContactChannels(): ContactChannel[] {
       hint: linkedin ?? 'Adicionar perfil confirmado',
       configured: Boolean(linkedin),
     },
+    {
+      id: 'tiktok',
+      label: 'TikTok',
+      href: tiktok,
+      hint: tiktok ?? 'Adicionar perfil confirmado',
+      configured: Boolean(tiktok),
+    },
   ]
 }
 
@@ -185,4 +190,13 @@ export function getPrimaryMailto(): string | null {
   const email = profile.contact.email
   if (!email) return null
   return `mailto:${email}?subject=${encodeURIComponent('Consultoria ou avaliação')}`
+}
+
+export function getPrimaryCtaHref(): string | null {
+  const mailto = getPrimaryMailto()
+  if (mailto) return mailto
+
+  const whatsapp = profile.contact.whatsapp
+  if (!whatsapp) return null
+  return `https://wa.me/${whatsapp.replace(/\D/g, '')}`
 }

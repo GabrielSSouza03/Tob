@@ -24,7 +24,7 @@ export type ExperienceItem = {
 }
 
 export type ContactChannel = {
-  id: 'email' | 'whatsapp' | 'linkedin'
+  id: 'email' | 'whatsapp' | 'linkedin' | 'tiktok'
   label: string
   href: string | null
   hint: string
@@ -79,6 +79,7 @@ export type Profile = {
     email: string | null
     whatsapp: string | null
     linkedin: string | null
+    tiktok: string | null
   }
   seo: {
     title: string

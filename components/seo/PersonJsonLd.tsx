@@ -3,6 +3,7 @@ import { profile } from '@/data/profile'
 export function PersonJsonLd() {
   const sameAs = [
     profile.contact.linkedin,
+    profile.contact.tiktok,
     profile.contact.whatsapp
       ? `https://wa.me/${profile.contact.whatsapp.replace(/\D/g, '')}`
       : null,
