@@ -174,22 +174,16 @@ button { font: inherit; }
 .intro-note p { margin: 0; color: #68758a; font-size: var(--text-xs); line-height: 1.6; }
 .note-index { color: #abb4bf; font-size: var(--text-xs); }
 .experience-photo {
-  margin: 28px 0 0;
+  margin: 36px 0 0;
   overflow: hidden;
   background: #0b1f3a;
 }
 .experience-photo-image {
   width: 100%;
-  height: clamp(220px, 32vw, 420px);
+  height: clamp(360px, 48vw, 640px);
   object-fit: cover;
   object-position: center top;
   display: block;
-}
-.experience-photo figcaption {
-  margin: 10px 0 0;
-  color: #8792a2;
-  font-size: var(--text-xs);
-  letter-spacing: .08em;
 }
 .experience { padding-top: 104px; padding-bottom: 110px; background: #f5f7fa; }
 .section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 36px; margin-bottom: 45px; }
@@ -204,7 +198,6 @@ button { font: inherit; }
 .experience-card h3 { max-width: 390px; margin: 0; font-size: var(--text-xl); line-height: 1.16; letter-spacing: -.03em; font-weight: var(--font-weight-heading); }
 .experience-detail { margin: 13px 0 0; color: #7a8797; font-size: var(--text-xs); line-height: 1.85; white-space: pre-line; }
 .corinthians-card .experience-detail { color: #b1bdcc; }
-.experience-footnote { margin: 15px 0 0; color: #8792a2; font-size: var(--text-xs); }
 .specialties { padding-top: 137px; padding-bottom: 139px; display: grid; grid-template-columns: .85fr 1.15fr; gap: 12%; }
 .specialty-title h2 { margin-top: 28px; }
 .specialty-title > p { margin-top: 19px; max-width: 285px; color: #788496; font-size: var(--text-xs); line-height: 1.7; }
@@ -289,7 +282,7 @@ button { font: inherit; }
   .intro h2, .section-heading h2, .specialty-title h2 { font-size: 34px; }
   .intro-media { max-height: 360px; }
   .intro-note { margin-top: 4px; }
-  .experience-photo-image { height: 260px; }
+  .experience-photo-image { height: clamp(300px, 72vw, 420px); }
   .experience { padding-top: 76px; padding-bottom: 78px; }
   .section-heading { display: block; margin-bottom: 30px; }
   .section-heading > p { margin-top: 16px; }

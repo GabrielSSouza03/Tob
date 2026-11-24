@@ -68,17 +68,12 @@ export function Experience() {
         <Image
           src={profile.images.training.src}
           alt={profile.images.training.alt}
-          width={1280}
-          height={720}
-          sizes="(max-width: 760px) 100vw, 78vw"
+          width={1600}
+          height={1000}
+          sizes="(max-width: 760px) 100vw, 86vw"
           className="experience-photo-image"
         />
-        <figcaption>Preparação física · Sport Science em campo</figcaption>
       </figure>
-
-      <p className="experience-footnote">
-        Experiência profissional conforme informações fornecidas.
-      </p>
     </section>
   )
 }
