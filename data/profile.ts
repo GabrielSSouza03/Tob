@@ -48,7 +48,7 @@ export const profile: Profile = {
     },
     {
       number: '04',
-      title: 'Prescrição de exercícios',
+      title: 'Treinamento de força',
       text: 'Planejamento de exercícios considerando objetivos, contexto e características individuais.',
     },
   ],
@@ -122,10 +122,11 @@ export const profile: Profile = {
     },
     copy: 'Entre em contato para conversar sobre consultoria, avaliação e possibilidades de colaboração profissional.',
     ctaLabel: 'Solicitar consultoria ou avaliação',
-    email: null,
+    email: 'tobiaslimasouza.87@gmail.com',
     whatsapp: '55 11 97827-3354',
     linkedin: 'https://www.linkedin.com/in/tobiasdelima/',
     tiktok: 'https://www.tiktok.com/@tobiasfisiologista',
+    instagram: 'https://www.instagram.com/ls_tobias',
   },
   seo: {
     title: 'Tobias de Lima | Fisiologia Esportiva e Performance',
@@ -150,7 +151,7 @@ export const profile: Profile = {
 }
 
 export function getContactChannels(): ContactChannel[] {
-  const { email, whatsapp, linkedin, tiktok } = profile.contact
+  const { email, whatsapp, linkedin, tiktok, instagram } = profile.contact
 
   return [
     {
@@ -182,6 +183,13 @@ export function getContactChannels(): ContactChannel[] {
       href: tiktok,
       hint: tiktok ?? 'Adicionar perfil confirmado',
       configured: Boolean(tiktok),
+    },
+    {
+      id: 'instagram',
+      label: 'Instagram',
+      href: instagram,
+      hint: instagram ?? 'Adicionar perfil confirmado',
+      configured: Boolean(instagram),
     },
   ]
 }

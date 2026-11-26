@@ -4,6 +4,7 @@ export function PersonJsonLd() {
   const sameAs = [
     profile.contact.linkedin,
     profile.contact.tiktok,
+    profile.contact.instagram,
     profile.contact.whatsapp
       ? `https://wa.me/${profile.contact.whatsapp.replace(/\D/g, '')}`
       : null,
